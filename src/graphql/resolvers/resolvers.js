@@ -100,7 +100,7 @@ const resolvers = {
             if (!context.user) throw new Error("Access Denied: You must be logged in.");
 
             try {
-                const newEmployee = new Employee({...args, employee_photo: photoUrl})
+                const newEmployee = new Employee(args)
                 const savedEmployee = await newEmployee.save()
 
                 return savedEmployee
